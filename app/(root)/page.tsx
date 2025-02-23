@@ -1,7 +1,29 @@
+import HeaderBox from "@/components/headerBox";
+import TotalBalanceBox from "@/components/TotalBalanceBox";
 import React from "react";
 
 const Home = () => {
-  return <div>page</div>;
+  const loggedIn = { firstName: "Kadek" };
+  return (
+    <section className="home">
+      <div className="home-content">
+        <header className="home-header">
+          <HeaderBox
+            type="greeting"
+            title="welcome"
+            user={loggedIn.firstName || "Guest"}
+            subtext="Access and manage your account and transaction efficiently"
+          />
+
+          <TotalBalanceBox
+            accounts={[]}
+            totalBanks={1}
+            totalCurrentBalance={1250.0}
+          />
+        </header>
+      </div>
+    </section>
+  );
 };
 
 export default Home;
